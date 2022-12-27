@@ -10,12 +10,12 @@ class ChatroomsController < ApplicationController
   end
 
   def show
-    @single_room = Chatroom.find(params[:id])
+    @single_chatroom = Chatroom.find(params[:id])
     @chatroom = Chatroom.new
     @chatrooms = Chatroom.public_chatrooms
 
     @message = Message.new
-    @messages = @single_room.messages.order(created_at: :asc)
+    @messages = @single_chatroom.messages.order(created_at: :asc)
 
     @users = User.all_except(current_user)
     render 'index'
