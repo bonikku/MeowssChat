@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   end
   root 'pages#home'
   devise_for :users, controllers: {
-    sessions: 'users/sesions',
+    sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
   get 'user/:id', to: 'users#show', as: 'user'
